@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="armor"
+            type="com.mahrous.testkotlin.data.FinalArmor" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardElevation="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/semi_brown">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/amor_image"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:scaleType="fitCenter"
+                app:imageResource="@{armor.iconType}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/amor_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="4dp"
+                android:text="@{armor.name}"
+                android:textColor="@color/heavy"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/amor_image"
+                app:layout_constraintTop_toTopOf="@id/amor_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/rank"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{armor.rank}"
+                android:textColor="@color/brown"
+                app:layout_constraintStart_toEndOf="@id/amor_image"
+                app:layout_constraintStart_toStartOf="@id/amor_name"
+                app:layout_constraintTop_toBottomOf="@id/amor_name"
+                app:layout_constraintWidth_percent="0.3" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/base"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{armor.baseDefense}"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toEndOf="@id/rank"
+                app:layout_constraintTop_toBottomOf="@id/amor_name"
+                app:layout_constraintWidth_percent="0.3" />
+
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:id="@+id/armor_"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="@{armor.decorationSlots}"-->
+            <!--                app:layout_constraintHorizontal_chainStyle="spread"-->
+            <!--                app:layout_constraintStart_toEndOf="@id/base"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/amor_name"-->
+            <!--                app:layout_constraintWidth_percent="0.3" />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
